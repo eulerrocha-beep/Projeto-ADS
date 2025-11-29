@@ -53,3 +53,5 @@ e o treino vem assim:
 
 id_treino
 NULL */ 
+
+SELECT 
