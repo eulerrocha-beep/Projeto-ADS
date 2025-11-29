@@ -55,3 +55,34 @@ id_treino
 NULL */ 
 
 SELECT 
+    c.id_aluno,
+    c.nome AS nome_aluno,
+    c.id_aluno AS aluno_cadastrado,
+    b.nome AS nome_instrutor
+FROM aluno c
+LEFT JOIN treino a
+    ON a.id_aluno = c.id_aluno
+LEFT JOIN instrutor b
+    ON b.id_instrutor = c.id_instrutor
+WHERE c.id_aluno = 1
+LIMIT 1;
+
+/* LIMIT 1 garante que somente um registro será retornado, mesmo que a junção gere duplicatas. */
+
+SELECT 
+    c.id_aluno,
+    c.nome AS nome_aluno,
+    c.id_aluno AS aluno_cadastrado,
+    b.nome AS nome_instrutor
+FROM aluno c
+LEFT JOIN treino a
+    ON a.id_aluno = c.id_aluno
+LEFT JOIN instrutor b
+    ON b.id_instrutor = c.id_instrutor
+WHERE c.id_aluno = 1
+ORDER BY c.id_aluno ASC
+LIMIT 1;
+
+/*  ORDER BY retorna os resultados ordenados por um ou mais campos.
+    ASC = ordem crescente (padrão)
+    DESC = ordem decrescente */
